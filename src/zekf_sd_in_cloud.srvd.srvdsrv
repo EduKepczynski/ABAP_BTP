@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service Definition - ZEKF_ZC_T_IN_CLOUD'
+define service ZEKF_SD_IN_CLOUD {
+  expose ZEKF_ZC_T_IN_CLOUD as Course;
+  expose ZEKF_ZC_T_IN_CLOUD2 as Schedule;
+  expose I_Country as Country;
+  expose I_Currency as Currency;
+}
