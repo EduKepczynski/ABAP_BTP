@@ -1,0 +1,11 @@
+@EndUserText.label: 'Access Control for ZEKF_C_TRAVEL'
+@MappingRole: true
+define role ZEKF_AC_TRAVEL_PV {
+    grant
+        select
+            on
+                ZEKF_C_TRAVEL
+                    where
+                        inheriting conditions from entity ZEKF_DD_TRAVEL;
+                        
+}

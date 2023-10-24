@@ -1,0 +1,18 @@
+@EndUserText.label: 'Access Control for ZEKF_DD_TRAVEL'
+@MappingRole: true
+define role ZEKF_AC_TRAVEL {
+    grant
+        select
+            on
+                ZEKF_DD_TRAVEL
+                    where
+                        //entity_element_1 = 'literal_value'
+                        //or entity_element_2 = aspect user;
+                        CurrencyCode = 'EUR'
+                        and
+                        ( TravelStatus ) = aspect pfcg_auth( ZEKF_OSTAT, ZEKF_STAT, ACTVT = '03' )
+                        // No data is fetched because of our users authorizations on the trial server
+                        or true
+                        // This 'or true' is a work around to show the data in this server
+                        ;
+}
