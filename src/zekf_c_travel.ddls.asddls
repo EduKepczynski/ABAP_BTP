@@ -4,6 +4,7 @@
 @Search.searchable: true
 
 define root view entity ZEKF_C_TRAVEL
+  provider contract transactional_query
   as projection on ZEKF_DD_TRAVEL as Travel
 {
   key TravelUUID,
@@ -16,7 +17,7 @@ define root view entity ZEKF_C_TRAVEL
       AgencyID,
       _Agency.Name       as AgencyName,
 
-      @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID ' } }]
+      @Consumption.valueHelpDefinition: [{ entity : {name: '/DMO/I_Customer', element: 'CustomerID' } }]
       @ObjectModel.text.element: [ 'CustomerName' ]
       @Search.defaultSearchElement: true
       CustomerID,
@@ -28,7 +29,7 @@ define root view entity ZEKF_C_TRAVEL
       BookingFee,
       @Semantics.amount.currencyCode: 'CurrencyCode'
       TotalPrice,
-      @Consumption.valueHelpDefinition: [{ entity : {name: 'I_Currency', element: 'Currency ' } }]
+      @Consumption.valueHelpDefinition: [{ entity : {name: 'I_Currency', element: 'Currency' } }]
       CurrencyCode,
       Description,
       TravelStatus,
